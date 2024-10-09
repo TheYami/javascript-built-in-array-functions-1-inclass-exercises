@@ -10,6 +10,17 @@
 
 // Start coding here
 
+function addBonusForSelectedDepartment(employeeInfo,bonus,department){
+  const totalWithBonus = employeeInfo
+  .filter(employee => employee.department === department)
+  .map(employee => employee.salary + bonus);
+
+
+  const totalCost = totalWithBonus.reduce((acc, salaryWithBonus) => acc + salaryWithBonus, 0);
+
+return totalCost;
+}
+
 const employeeInfo = [
   {
     firstname: "Alice",
